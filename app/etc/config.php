@@ -258,6 +258,7 @@ return [
         'Amazon_Payment' => 1,
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
+        'EthanYehuda_CronjobManager' => 1,
         'Everis_Direccion' => 1,
         'Everis_Holamundo' => 1,
         'Klarna_Core' => 1,

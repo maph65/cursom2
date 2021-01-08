@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd7621db5e1ea718918f523d389a09ae",
+    "content-hash": "9842d371016816b62158680cb269a1aa",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -1202,6 +1202,44 @@
                 "symfony"
             ],
             "time": "2017-10-22T18:56:00+00:00"
+        },
+        {
+            "name": "ethanyehuda/magento2-cronjobmanager",
+            "version": "v1.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ethan3600/magento2-CronjobManager.git",
+                "reference": "0da72ff4fd4bb5994e02944248944d8673b6d623"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ethan3600/magento2-CronjobManager/zipball/0da72ff4fd4bb5994e02944248944d8673b6d623",
+                "reference": "0da72ff4fd4bb5994e02944248944d8673b6d623",
+                "shasum": ""
+            },
+            "require": {
+                "ext-posix": "*",
+                "magento/framework": "~101.0.0|~102.0.0|~103.0.0|~104.0.0",
+                "php": "~7.1.0||~7.2.0||~7.3.0||~7.4.0"
+            },
+            "require-dev": {
+                "ext-pcntl": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "EthanYehuda\\CronjobManager\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "A module for managing scheduled cron jobs from magento's admin panel",
+            "time": "2020-12-12T20:35:19+00:00"
         },
         {
             "name": "ezimuel/guzzlestreams",
@@ -21970,6 +22008,5 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

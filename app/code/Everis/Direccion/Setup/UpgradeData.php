@@ -6,6 +6,8 @@ use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\UpgradeDataInterface;
 
+use Magento\Config\Model\ResourceModel\Config as ConfigResource;
+
 use Everis\Direccion\Model\NeighborhoodFactory;
 use Everis\Direccion\Model\Resource\Neighborhood as NeighborhoodResource;
 
@@ -14,12 +16,16 @@ class UpgradeData implements UpgradeDataInterface {
     protected $_neighborhoodFactory;
     protected $_neighborhoodResource;
 
+    protected $_configResource;
+
     public function __construct(
         NeighborhoodFactory $_neighborhoodFactory,
-        NeighborhoodResource $_neighborhoodResource
+        NeighborhoodResource $_neighborhoodResource,
+        ConfigResource $configResource
     ){
         $this->_neighborhoodFactory = $_neighborhoodFactory;
         $this->_neighborhoodResource = $_neighborhoodResource;
+        $this->_configResource = $configResource;
     }
 
 
@@ -54,6 +60,17 @@ class UpgradeData implements UpgradeDataInterface {
                 $this->_neighborhoodResource->save($neighborhood);
 
             }
+
+            $setup->endSetup();
+        }
+
+        if (version_compare($context->getVersion(), '0.0.4', '<')) {
+            $setup->startSetup();
+
+            $this->_configResource->deleteConfig('customer/address_templates/text', 'default',0);
+            $this->_configResource->deleteConfig('customer/address_templates/oneline', 'default',0);
+            $this->_configResource->deleteConfig('customer/address_templates/html', 'default',0);
+            $this->_configResource->deleteConfig('customer/address_templates/pdf', 'default',0);
 
             $setup->endSetup();
         }

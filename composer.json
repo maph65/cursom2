@@ -11,6 +11,7 @@
         "sort-packages": true
     },
     "require": {
+        "ethanyehuda/magento2-cronjobmanager": "^1.11",
         "magento/composer-root-update-plugin": "~1.0",
         "magento/module-bundle-sample-data": "100.3.*",
         "magento/module-catalog-rule-sample-data": "100.3.*",
